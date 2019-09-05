@@ -1,0 +1,34 @@
+/* Add mobile styles for the component here.  */
+@import "../../../theme/colors";
+
+FlexBoxLayout {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+        width: 300;
+    }
+}
+
+.btn-alt {
+    margin-top: 15;
+    font-size: 30;
+}
+
+.animate-button {
+    animation-name: slide-up;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(60);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

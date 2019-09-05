@@ -1,0 +1,63 @@
+<ns-action-bar
+  [title]="isLogin ? 'Log in' : 'Sign up'"
+  [showBackButton]="false"
+  [hasMenu]="false"
+></ns-action-bar>
+<StackLayout class="form" [formGroup]="form">
+  <StackLayout class="input-field">
+    <Label
+      class="label"
+      text="E-mail"
+      [ngClass]="{ invalid: !emailControlIsValid }"
+    ></Label>
+    <TextField
+      class="input"
+      returnKey="next"
+      [autocorrection]="false"
+      keyboardType="email"
+      autocapitalizationType="none"
+      formControlName="email"
+      #emailEl
+    ></TextField>
+    <Label
+      text="Please enter valid email."
+      *ngIf="!emailControlIsValid"
+    ></Label>
+  </StackLayout>
+  <StackLayout class="input-field">
+    <Label
+      class="label"
+      text="Password"
+      [ngClass]="{ invalid: !passwordControlIsValid }"
+    ></Label>
+    <TextField
+      class="input"
+      returnKey="done"
+      [autocorrection]="false"
+      keyboardType="email"
+      autocapitalizationType="none"
+      [secure]="true"
+      hint="Min 6 characters"
+      formControlName="password"
+      #passwordEl
+      (returnPress)="onDone()"
+    ></TextField>
+    <Label
+      text="Please enter valid password."
+      *ngIf="!passwordControlIsValid"
+    ></Label>
+  </StackLayout>
+  <Label
+    class="text-primary text-center text-authentication-type p-t-10 p-b-10 m-b-10"
+    [text]="!isLogin ? 'Login instead' : 'Sign up instead'"
+    (tap)="onSwitch()"
+  ></Label>
+  <Button
+    [text]="isLogin ? 'Log in' : 'Sign up'"
+    class="btn btn-primary btn-rounded-lg"
+    (tap)="onSubmit()"
+    [isEnabled]="form.valid"
+    *ngIf="!isLoading"
+  ></Button>
+  <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+</StackLayout>

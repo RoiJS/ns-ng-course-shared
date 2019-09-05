@@ -1,7 +1,10 @@
 {
   "name": "ns-ng-course-shared",
   "nativescript": {
-    "id": "org.nativescript.nsngcourseshared"
+    "id": "org.nativescript.nsngcourseshared",
+    "tns-android": {
+      "version": "6.0.2"
+    }
   },
   "version": "0.0.0",
   "scripts": {
@@ -30,6 +33,7 @@
     "core-js": "^2.5.4",
     "nativescript-angular": "~8.0.1",
     "nativescript-theme-core": "~1.0.4",
+    "nativescript-ui-sidedrawer": "^7.0.1",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.5.0",
     "tns-core-modules": "~6.0.0",

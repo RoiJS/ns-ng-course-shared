@@ -1,2 +1,80 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
+
+@import "./theme/colors";
+
+.form {
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+
+  .input-field {
+    width: 80%;
+
+    .label {
+      color: $primary;
+      font-weight: bold;
+      font-family: "Oswald", "Oswald-Regular", "Oswald-Bold";
+    }
+
+    .label.invalid {
+      color: $invalid;
+    }
+
+    .input {
+      border-bottom-width: 2;
+      border-bottom-color: $primary;
+      width: 100%;
+      color: black;
+    }
+
+    .input.ng-invalid.ng-touched {
+      border-bottom-color: $invalid;
+      color: $invalid;
+    }
+  }
+}
+
+.drawer-container {
+  background: linear-gradient(140deg, $primary, $secondary);
+  horizontal-align: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20;
+
+  .btn {
+    width: 80%;
+  }
+}
+
+.btn-success {
+  background-color: $success;
+  border-width: 1;
+  border-color: $success;
+  color: $white;
+}
+
+.btn-fail {
+  background-color: $fail;
+  border-width: 1;
+  border-color: $fail;
+  color: $white;
+}
+
+.btn-flat {
+  background: $white;
+  border-color: $white;
+  border-width: 0;
+  color: $primary;
+}
+
+.h1 {
+  font-weight: bold;
+  color: $primary;
+  font-family: "Oswald", "Oswald-Regular", "Oswald-Bold";
+}
+
+.fa {
+  font-family: "FontAwesome", "Font-Awesome";
+}

@@ -1,0 +1,41 @@
+@import "../../../theme/colors";
+
+.page {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20;
+}
+
+.week-day-label {
+  margin: 15 0;
+  color: $secondary;
+  font-weight: bold;
+}
+
+.day {
+  justify-content: center;
+  align-items: center;
+  margin: 10;
+  width: 45;
+  height: 45;
+  border-color: $primary;
+  border-width: 1;
+  border-radius: 50%;
+  color: $primary;
+}
+
+.completed {
+  background: $success;
+  color: white;
+}
+
+.failed {
+  background: $fail;
+  color: white;
+}
+
+.not-settable {
+  background: #ccc;
+  color: #171717;
+}

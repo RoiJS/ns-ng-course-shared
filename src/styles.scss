@@ -1,4 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap");
 
 // Import common styles
-@import 'app-common';
+@import "./theme/colors";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+}
+
+.input-field {
+  margin: 1rem 0;
+}
+
+.label {
+}
+
+.input {
+  font: inherit;
+  border: none;
+  border-bottom-style: solid;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.btn {
+  background: $primary;
+  color: $white;
+  padding: 0.25rem 1rem;
+  border-radius: 15px;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background: lighten($primary, 20);
+}
+
+.btn-flat {
+  cursor: pointer;
+}
+
+.btn-flat:hover,
+.btn-flat:active {
+  color: lighten($primary, 20);
+}
+
+.text-center {
+  text-align: center;
+}
+
+@import "app-common";
+
+.btn-success {
+  background-color: $success;
+  border-width: 1px;
+  border-color: $success;
+  color: $white;
+}
+
+.btn-fail {
+  background-color: $fail;
+  border-width: 1px;
+  border-color: $fail;
+  color: $white;
+}
+
+.btn-flat {
+  background: $white;
+  border-color: $white;
+  border-width: 0;
+  color: $primary;
+}

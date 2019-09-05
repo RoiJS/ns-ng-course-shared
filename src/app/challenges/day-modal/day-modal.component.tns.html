@@ -1,0 +1,7 @@
+<FlexBoxLayout>
+  <Label class="h1" [text]="loadedDate | date"></Label>
+  <ns-challenge-actions
+    (actionSelect)="onHandledInput($event)"
+    [chosen]="loadedStatus"
+  ></ns-challenge-actions>
+</FlexBoxLayout>

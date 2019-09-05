@@ -1,15 +1,20 @@
-import { Routes } from '@angular/router';
-
-import { HomeComponent } from '@src/app/home/home.component';
+import { Routes } from "@angular/router";
+import { AuthGuard } from "./auth/auth.guard";
 
 export const routes: Routes = [
   {
-      path: '',
-      redirectTo: '/home',
-      pathMatch: 'full',
+    path: "",
+    redirectTo: "/challenges/today",
+    pathMatch: "full"
   },
   {
-      path: 'home',
-      component: HomeComponent,
+    path: "auth",
+    loadChildren: () => import("./auth/auth.module").then(m => m.AuthModule)
   },
+  {
+    path: "challenges",
+    loadChildren: () =>
+      import("./challenges/challenges.module").then(m => m.ChallengesModule),
+    canLoad: [AuthGuard]
+  }
 ];
