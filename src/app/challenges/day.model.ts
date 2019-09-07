@@ -7,6 +7,4 @@ export interface Day {
     dayInMonth: number;
     date: Date;
     status: DayStatus;
-
-    isSettable: boolean;
 }

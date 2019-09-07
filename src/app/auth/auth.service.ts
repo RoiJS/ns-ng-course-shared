@@ -158,7 +158,9 @@ export class AuthService {
         this.dialogService.alert("Your password is invalid.");
         break;
       default:
-        this.dialogService.alert("Authentication failed. Please check your credentials.");
+        this.dialogService.alert(
+          "Authentication failed. Please check your credentials."
+        );
     }
     console.error(errorMessage);
   }

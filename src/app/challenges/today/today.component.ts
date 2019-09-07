@@ -11,9 +11,9 @@ import { Day, DayStatus } from "../day.model";
 })
 export class TodayComponent implements OnInit, OnDestroy {
   currentDay: Day;
+  isLoading = false;
 
   private curChallengeSub: Subscription;
-  private isLoading = false;
 
   constructor(private challengeService: ChallengeService) {}
 

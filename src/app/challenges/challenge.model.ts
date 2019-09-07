@@ -20,8 +20,7 @@ export class Challenge {
                 dayInMonth: i,
                 dayInWeek: dayInWeek,
                 date: date,
-                status: DayStatus.Open,
-                isSettable: (i <= new Date().getDate())
+                status: DayStatus.Open
             });
         }
     }

@@ -29,7 +29,7 @@
       *ngFor="let day of currentChallenge.days; let i = index"
       class="day"
       [ngClass]="{
-        'not-settable': !day.isSettable,
+        'not-settable': !isSettable(day),
         completed: day.status === 1,
         failed: day.status === 2
       }"

@@ -14,9 +14,9 @@ export class CurrentChallengeComponent implements OnInit, OnDestroy {
   weekDays = ["S", "M", "T", "W", "T", "F", "S"];
   currentChallenge: Challenge;
   selectedDay: Day = null;
+  isLoading = false;
 
   private curChallengeSub: Subscription;
-  private isLoading = false;
 
   constructor(private challengeService: ChallengeService) {}
 
@@ -61,11 +61,14 @@ export class CurrentChallengeComponent implements OnInit, OnDestroy {
   }
 
   onChangeStatus(day: Day) {
-    if (!day.isSettable) {
+    if (!this.isSettable(day)) {
       return;
     }
-
     this.selectedDay = day;
+  }
+
+  isSettable(day: Day) {
+    return day.dayInMonth <= new Date().getDate();
   }
 
   onUpdateStatus(selectedAction: DayStatus) {
